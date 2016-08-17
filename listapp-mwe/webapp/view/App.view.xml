@@ -1,0 +1,54 @@
+<mvc:View controllerName="minimum.working.example.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:tnt="sap.tnt"
+	xmlns:commons="sap.ui.commons"
+	xmlns="sap.m"
+	height="100%">
+    <App id="app">
+        <pages>
+            <Page>
+                <customHeader>
+                    <Bar>
+                        <contentLeft>
+                            <Button id="sidebarToggle"
+            						icon="sap-icon://menu2"
+            						type="Transparent"
+            						press="onSidebarToggle">
+            					<layoutData>
+            						<OverflowToolbarLayoutData priority="NeverOverflow" />
+            					</layoutData>
+            				</Button>
+            				<Button icon="sap-icon://nav-back" press="onNavBack"></Button>
+                        </contentLeft>
+                        <contentMiddle>
+                            <Text text="(Nearly) Minimum working example" />
+                        </contentMiddle>
+                    </Bar>
+                </customHeader>
+                
+                <content>
+                	<tnt:ToolPage id="toolPage" sideExpanded="{= ${device>/system/desktop} }">
+                        <tnt:sideContent>
+                            <tnt:SideNavigation id="navigationList" itemSelect="onItemSelect">
+                                <tnt:NavigationList>
+                                    <tnt:NavigationListItem icon="sap-icon://home" text="Overview" key="overview" />
+                    				<tnt:NavigationListItem icon="sap-icon://list" text="Lists">
+                        				<tnt:NavigationListItem text="List A" key="lists/a" />
+                        				<tnt:NavigationListItem text="List B" key="lists/b" />
+                    				</tnt:NavigationListItem>
+                				</tnt:NavigationList>
+                			</tnt:SideNavigation>
+                        </tnt:sideContent>
+                        
+                        <tnt:mainContents>
+                            <NavContainer id="navContainer">
+                                <pages></pages>
+                            </NavContainer>
+                        </tnt:mainContents>
+                	</tnt:ToolPage>
+    	        </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

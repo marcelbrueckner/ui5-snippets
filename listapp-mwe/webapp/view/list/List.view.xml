@@ -1,0 +1,62 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="minimum.working.example.controller.list.List" xmlns:html="http://www.w3.org/1999/xhtml">
+    
+	<Page showHeader="false" class="sapUiContentPadding">
+        <content>
+	        <Table
+				id="table"
+				busy="false"
+				growing="true"
+				growingScrollToLoad="true"
+				noDataText="No data"
+				updateFinished="onUpdateFinished"
+				width="auto"
+				items="{
+					path: '/',
+					sorter: {
+						path: 'ItemID',
+						descending: false
+					}
+				}">
+				<headerToolbar>
+					<Toolbar>
+						<Title
+							id="tableHeader"
+							text="List items"/>
+						<ToolbarSpacer/>
+						<SearchField
+							id="searchField"
+							search="onSearch"
+							tooltip="Search some random fields"
+							width="auto"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Item ID"/>
+					</Column>
+					<Column>
+						<Text text="Title"/>
+					</Column>
+					<Column>
+						<Text text="Item date"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem
+						press="onListItemPressed"
+						type="Navigation">
+						<cells>
+						    <Text text="{ItemID}" />
+							<ObjectIdentifier title="{Title}"/>
+							<Text text="{
+                                path: 'ItemDate',  
+                                formatter: '.formatter.DateFormat.fromJSONDate'
+							}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+        </content>
+    </Page>
+</mvc:View>

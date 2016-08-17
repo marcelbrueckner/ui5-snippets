@@ -1,0 +1,54 @@
+[
+    {
+    	"ItemID": 9551,
+    	"Title": "Item 9551 of List B",
+    	"ItemDate": "/Date(1461283200000)/",
+    	"OverallStatus": "done",
+        "CompletionDate": "/Date(1434326400000)/",
+        "References": {
+            "Primary": [
+                {
+                    "Name": "Reference name",
+                    "Type": "Type 2",
+                    "Key": "12345",
+                    "Source": "https://www.example.com/12345",
+                    "Description": "Example primary reference"
+                }
+            ],
+            "Secondary": [
+                {
+                    "Name": "Google",
+                    "Type": "URI",
+                    "Key": "",
+                    "Source": "http://www.google.com",
+                    "Description": "Google is my friend"
+                },
+                {
+                    "Name": "DuckDuckGo",
+                    "Type": "URI",
+                    "Key": "",
+                    "Source": "http://www.duckduckgo.com",
+                    "Description": "Quack"
+                },
+                {
+                    "Name": "Random reference name",
+                    "Type": "OTH",
+                    "Key": "Arbitrary key",
+                    "Source": "Path/to/other/reference",
+                    "Description": "Description"
+                },
+                {
+                    "Name": "Another useful reference",
+                    "Type": "OTH",
+                    "Key": "12345",
+                    "Source": "Path/to/useful/reference",
+                    "Description": "Nice description"
+                }
+            ]
+    	},
+        "CreatedAt": "/Date(1422489600000)/",
+        "CreatedBy": "userb",
+        "ChangedAt": "/Date(1434326400000)/",
+        "ChangedBy": "userb"
+    }
+]

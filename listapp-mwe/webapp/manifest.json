@@ -1,0 +1,115 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "minimum.working.example",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"localService": {
+				"uri": "/",
+				"type": "OData"
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "minimum.working.example.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.34.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+		    "": {
+                "dataSource": "localService"
+		    }
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "minimum.working.example.view",
+				"controlId": "navContainer",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"clearTarget": "true",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "overview",
+					"target": "overview"
+				},
+				{
+					"pattern": "lists/{listType}",
+					"name": "lists",
+					"target": "lists",
+					"subroutes": [
+					    {
+    					    "pattern": "lists/{listType}/{itemId}",
+        					"name": "item",
+        					"target": "item"
+					    }
+				    ]
+				}
+			],
+			"targets": {
+				"overview": {
+					"viewName": "Overview",
+					"viewLevel": 1
+				},
+				"lists": {
+					"viewName": "list.List",
+					"viewLevel": 1
+				},
+				"item": {
+					"viewName": "list.Item",
+					"viewLevel": 2
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+<mvc:View
+	controllerName="minimum.working.example.controller.NotFound"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<MessagePage
+	    showHeader="false"
+		text="Not found"
+		description="The requested resource cannot be found."/>
+</mvc:View>

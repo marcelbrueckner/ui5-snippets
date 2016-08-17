@@ -1,0 +1,51 @@
+<mvc:View
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:sharedBlock="minimum.working.example.block"
+	controllerName="minimum.working.example.controller.list.Item"
+	height="100%">
+
+	<m:Page id="listItemPage"
+	        title="List item"
+            showHeader="false"
+            class="sapUiContentPadding"
+            busy="true">
+        <m:content>
+            <ObjectPageLayout id="listItemObject" visible="false">
+        		<headerTitle>
+        			<ObjectPageHeader
+                                    id="listItemHeader"
+                                    headerDesign="Light"
+                                    objectTitle="{Title}"
+        			                objectSubtitle="{References/Primary/0/Type}">
+        			</ObjectPageHeader>
+        		</headerTitle>
+        		<sections>
+        			<!-- REFERENCES -->
+        			<ObjectPageSection title="References">
+        			    <subSections>
+        					<ObjectPageSubSection
+                                title="Primary"
+                                blocks="{References/Primary}"
+                                mode="Expanded">
+                                <blocks>
+                                    <sharedBlock:ReferenceBlock />
+                                </blocks>
+        					</ObjectPageSubSection>
+        					
+        					<ObjectPageSubSection
+                                title="Secondary"
+                                blocks="{References/Secondary}"
+                                mode="Expanded">
+                                <blocks>
+                                    <sharedBlock:ReferenceBlock />
+                                </blocks>
+        					</ObjectPageSubSection>
+        				</subSections>
+        			</ObjectPageSection>
+        		</sections>
+        	</ObjectPageLayout>
+        </m:content>
+    </m:Page>
+</mvc:View>
