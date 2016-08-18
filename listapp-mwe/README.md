@@ -54,3 +54,6 @@ Et voilà, the aforementioned error occurs.
 
 This error only occurs if you view an item with less references before. If you reload the app and directly navigate to *list item B* all four references are shown:
 ![All four references in list item B](screenshots/screen-08.png?raw=true "All references in list item B")
+
+### Demo
+A demo is available on [Plunker](http://run.plnkr.co/plunks/42tLCcdbNxBDtcQ5MUY1/).
